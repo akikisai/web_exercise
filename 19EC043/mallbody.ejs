@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ECショッピングセンター</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>ECショッピングセンター</h1>
+    <p>
+      <%
+	var user=session.user;
+	%>
+      id:<%= user.id %><br>
+      <%= user.name %>様<br>
+      <%= user.amount %>円
+    </p>
+    <%
+      var keys = Object.keys(application.itemmap).filter(function(x){
+      return x>="0" && x<"zzzzzz";});
+			  keys.sort();
+      %>
+    <form action="confirm.ejs" method="post">
+      <ul>
+	<%
+	  for(var key of keys){
+	  var item = application.itemmap[key];
+	  %>
+	<li>
+	  商品番号<%= item.no %>
+	  商品名<%= item.name %>
+	  <%= item.price %>円
+	  <input name="item<%= item.no %>" type="text" value="0">
+	</li>
+	<% }%>	
+      </ul>
+      <p><input type="submit"></p>
+    </form>
+    問い合わせ:19ec043@ms.dendai.ac.jp
+  </body>
+</html>

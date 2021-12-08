@@ -1,0 +1,9 @@
+<%
+var keys = Object.keys(req);
+var chumon = {};
+for(var key of keys){
+	chumon[/item(.*)/.exec(key)[1]]=req[key];
+}
+session.chumon=chumon;
+%>
+<%- include('confirmbody.ejs',{chumon: chumon,session:session, application: application}) %>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Mall</h1>
+    <p>
+      <%
+	var user=session.user;
+	%>
+      <%= user.id %>
+      <%= user.name %>
+      <%= user.amount %>
+    </p>
+    <%
+      var keys = Object.keys(application.itemmap).filter(function(x){
+      return x>="0" && x<"zzzzzz";});
+			  keys.sort();
+      %>
+    <form action="confirm.ejs" method="post">
+      <ul>
+	<%
+	  for(var key of keys){
+	  var item = application.itemmap[key];
+	  %>
+	<li>
+	  <%= item.no %>
+	  <%= item.name %>
+	  <%= item.price %>
+	  <input name="item<%= item.no %>" type="text" value="0">
+	</li>
+	<% }%>	
+      </ul>
+      <p><input type="submit"></p>
+    </form>
+  </body>
+</html>

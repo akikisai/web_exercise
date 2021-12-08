@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm</title>
+  </head>
+  <body>
+    <h1>Confirm</h1>
+    <p>
+      <%
+	var user=session.user;
+	%>
+      <%= user.id %>
+      <%= user.name %>
+      <%= user.amount %>
+    </p>
+    <%
+      var keys = Object.keys(chumon);
+      keys.sort();
+      %>
+    <ul>
+      <%
+	var total=0;
+	for(var key of keys){
+	var item = application.itemmap[key];
+	if(chumon[key]>0){
+	%>
+      <li>
+	<%= item.no %>
+	<%= item.name %>
+	<%= item.price %>
+	<%= chumon[key] %>
+	<% total += item.price*chumon[key]; %>
+      </li>
+      <% }%>	
+      <% }%>	
+    </ul>
+    <hr>
+    <p>
+      <%= total %>
+      <% session.total=total; %>
+    </p>
+    <form action="logout.ejs" method="post">
+      <p><input type="submit"></p>
+    </form>
+  </body>
+</html>

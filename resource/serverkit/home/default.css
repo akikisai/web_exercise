@@ -1,0 +1,122 @@
+body { color: black;
+	background: white;
+}
+
+em { color: red;
+     background: white;
+}
+ins { color: purple;
+     background: white;
+}
+del { color: gray;
+	text-decoration: line-through;
+     background: white;
+	
+}
+dfn{ color: green;
+     background: white;
+}
+strong { color: white;
+	background: red;
+}
+h1 { border-style: none solid double solid;
+          border-width: 0.5em 1em;
+ border-color: silver;
+}
+h2, h3, h4, h5 {      padding: 0.5em;
+     border-style: none none double solid;
+}
+h2 {margin-top: 2em;
+          border-width: 0.4em 0em 0em 1.8em;
+ border-color: red;
+	color: black;
+	background: pink;
+	clear: both;
+}
+h3 { margin-left: 1em;
+     border-width: 0.4em 0em 0em 1.0em;
+     border-color: blue;
+	color: black;
+	background: lightskyblue;
+	clear: both;
+}
+h4 { margin-left: 2em;
+     border-width: 0.4em 0em 0em 0.4em;
+     border-color: green;
+	color: black;
+	background: palegreen;
+	clear: both;
+}
+h5 { margin-left: 2em;
+     border-width: 0.2em 0em 0em 0.2em;
+     border-color: yellow;
+	color: black;
+	background: lightyellow;
+	clear: both;
+}
+p {text-indent: 1em;}
+
+div {text-align: center;
+/*
+	clear: both;
+*/
+}
+table {text-align: center;
+}
+th{text-align: center;
+}
+pre { 
+color: navy;
+/*
+color:red;
+	font-family: HG¥´¥·¥Ã¥¯E,monospace; 
+      text-align: left;
+/*
+	background: white;
+*/
+}
+code { color: navy; }
+kbd { color: maroon; }
+blockquote {color: black;
+	background-color: lightyellow;
+}
+dt { /*color: navy;
+	background: white;
+	clear: both;
+*/
+}
+.overline { text-decoration: overline;
+}	
+.right{float: right}
+.left{float: left}
+.clear{clear: both;}
+dl{text-align: left;}
+/* 
+ol{clear: both}
+ul{clear: both}
+dl{clear: both}
+*/
+li.clear{clear:both}
+div.figure{background-color: lightyellow;
+	border-style:solid;
+	border-width: 1pt;
+	border-color: yellow;
+	margin-left: auto;
+	margin-right: auto;
+/*	padding-left: auto;
+*/
+}
+div.rfigure{background-color: lightyellow;
+	border-style:solid;
+	border-width: 1pt;
+	border-color: yellow;
+	float: right;
+}
+
+/*
+dt,li, dd { background-color: lightyellow;
+}
+ol, ul, dl { background-color: lightyellow;
+}
+*/
+div math,dd > math{display: block;}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>料理選択</title>
+</head>
+<body>
+  <h1>料理選択</h1>
+  <form action="shukei.ejs" method="post">
+    <p>
+      料理番号を選択して、submitボタンを押して下さい
+      <button name="ryori" type="submit"  value="0">和食</button>
+      <button name="ryori" type="submit"  value="1">洋食</button>
+      <button name="ryori" type="submit"  value="2">中華</button>
+    </p>
+  </form>
+</body>
+</html>

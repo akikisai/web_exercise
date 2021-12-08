@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>商品リスト</title>
+  </head>
+  <body>
+    <h1>商品リスト</h1>
+    <table border="1">
+      <thead>
+	<tr>
+	  <th>商品番号</th><th>商品名</th><th>単価</th>
+	</tr>
+      </thead>
+      <tbody>
+	<%
+	  var keys = Object.keys(itemmap);
+	  keys.sort();
+	  for(var key of keys){
+	  %>
+	<tr>
+	  <td><%= itemmap[key].no %> </td>
+	  <td><%= itemmap[key].name %> </td>
+	  <td><%= itemmap[key].price %> </td>
+	</tr>
+
+	<% } %>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+	  

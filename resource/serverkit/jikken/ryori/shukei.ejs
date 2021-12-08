@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>集計結果</title>
+</head>
+<body>
+  <h1>集計結果</h1>
+  <form action="shukei.ejs" method="post">
+    <p>
+      <%= req.ryori %>
+    </p>
+    <%
+      ryorimei=['和食','洋食','中華']
+      if(typeof application.ryori == 'undefined'){
+      application.ryori=[0,0,0];
+      }
+      if(typeof session.ryori == 'undefined'){
+      session.ryori=[0,0,0];
+      }
+      application.ryori[req.ryori]++
+      session.ryori[req.ryori]++
+      %>
+    <dl>
+      <% for(var i=0; i<ryorimei.length; i++){%>
+	 <dt>
+	   <%= ryorimei[i]%>
+	 </dt>
+	 <dd>
+	   <%= application.ryori[i] %>
+	 </dd>
+	 <% }%>
+      <% for(var i=0; i<ryorimei.length; i++){%>
+	 <dt>
+	   <%= ryorimei[i]%>
+	 </dt>
+	 <dd>
+	   <%= session.ryori[i] %>
+	 </dd>
+	 <% }%>
+    </dl>
+</body>
+</html>

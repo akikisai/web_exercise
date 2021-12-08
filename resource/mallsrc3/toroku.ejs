@@ -1,0 +1,10 @@
+<%
+if(typeof application.itemmap == 'undefined'){
+    application.itemmap={};
+}
+var j=JSON.parse(req.jsondata);
+for(var i = 0; i<j.length; i++){
+    application.itemmap[j[i].no]=j[i];
+}
+    %>
+<%- include('torokubody.ejs',{itemmap:application.itemmap}) %>

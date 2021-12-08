@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Logout</title>
+  </head>
+  <body>
+    <h1>Logout</h1>
+      <%
+	var user=session.user;
+	user.amount += session.total;
+	%>
+    <p>
+      <%= user.id %>
+      <%= user.name %>
+      <%= user.amount %>
+    </p>
+    <% session.destroy((err)=>{}) %>
+  </body>
+</html>

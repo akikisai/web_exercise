@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>商品登録</title>
+  </head>
+  <body>
+    <h1>商品登録</h1>
+    <form action="toroku.ejs" method="post">
+      <p>
+	商品のリストを JSON で入力して下さい。
+      </p>
+      <textarea name="jsondata" cols="80" rows="10">
+	[{"no":"999001", "name":"dummy1","price": 100},
+	{"no":"999002", "name":"dummy2", "price": 200},
+	{"no":"999003", "name":"dummy3", "price": 300},
+	{"no":"999004", "name":"dummy4", "price": 400},
+	{"no":"999005", "name":"dummy5", "price": 500}]
+      </textarea>
+      <p>
+	<input type="submit">
+      </p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ログアウト</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>ログアウト</h1>
+      <%
+	var user=session.user;
+	user.amount += session.total;
+	%>
+    <p>
+      id:<%= user.id %>
+      <%= user.name %>様
+      <%= user.amount %>円
+    </p>
+    <% session.destroy((err)=>{}) %>
+    問い合わせ:19ec043@ms.dendai.ac.jp
+  </body>
+</html>
